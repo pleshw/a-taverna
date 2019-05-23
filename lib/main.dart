@@ -1,4 +1,5 @@
 import 'package:a_taverna/common.dart';
+import 'package:a_taverna/view/history_page.dart';
 import 'package:a_taverna/view/login_page.dart';
 import 'package:a_taverna/view/sign_up_page.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       /** Rota inicial. */
-      initialRoute: '/signUp',
+      initialRoute: '/createHistory',
+
       /** Todas as rotas */
       /// Rotas devem ser instanciadas em camelCase e em inglês com o nome
       /// do que a página propõe.
@@ -30,6 +32,12 @@ class MyApp extends StatelessWidget {
         ),
         '/signUp': (context) => SignUpPage(
           image: AssetImage("assets/images/cerveja_pequena.png"),
+          backgroundColor: backgroundColor,
+          buttonColor: HexColor("#BD5517"),
+          buttonFontColor: Colors.white,
+          placeholderColor: HexColor("#BF5817"),
+        ),
+        '/createHistory': (context) => CreateHistoryPage(
           backgroundColor: backgroundColor,
           buttonColor: HexColor("#BD5517"),
           buttonFontColor: Colors.white,
