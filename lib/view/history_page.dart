@@ -1,8 +1,8 @@
 import 'package:a_taverna/Components/default_input.dart';
 import 'package:flutter/material.dart';
 
-class CreateHistoryPage extends StatefulWidget {
-  CreateHistoryPage({
+class HistoryPage extends StatefulWidget {
+  HistoryPage({
     Key key,
     this.backgroundColor,
     this.buttonColor,
@@ -22,11 +22,11 @@ class CreateHistoryPage extends StatefulWidget {
   final String cinzelDecorative = "CinzelDecorative";
 
   @override
-  _CreateHistoryPageState createState() => _CreateHistoryPageState();
+  _HistoryPageState createState() => _HistoryPageState();
 }
 
 // An image under a container, the image will fit the container width and height.
-class _CreateHistoryPageState extends State<CreateHistoryPage> {
+class _HistoryPageState extends State<HistoryPage> {
   final PageController pageController = new PageController();
 
   final titleController = TextEditingController();
@@ -139,6 +139,7 @@ class _CreateHistoryPageState extends State<CreateHistoryPage> {
               child: DefaultInput(
                 "História",
                 placeholderColor: widget.placeholderColor,
+                keyboard: TextInputType.multiline,
               ),
             ),
           ),
@@ -264,6 +265,7 @@ class _CreateHistoryPageState extends State<CreateHistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: PageView.builder(
           controller: pageController,

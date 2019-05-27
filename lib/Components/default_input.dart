@@ -11,10 +11,13 @@ class DefaultInput extends StatefulWidget {
     this.fontFamily = "Taverna",
     this.mainColor = Colors.black87,
     this.placeholderColor = Colors.black54,
+        this.keyboard = TextInputType.text,
   }) : super(key: key);
 
   /// Controlador do texto inserido.
   final TextEditingController controller;
+
+  final TextInputType keyboard;
 
   /// Icone que é usado no sufixo do input.
   final IconData icon;
@@ -39,8 +42,9 @@ class _DefaultInputState extends State<DefaultInput> {
       controller: widget.controller,
       textCapitalization: TextCapitalization.none,
       textAlign: TextAlign.left,
+      maxLines: null,
       /** Tipo de teclado usado para a inserção de dado. */
-      keyboardType: TextInputType.text,
+      keyboardType: widget.keyboard,
       /** Decoração */
       decoration: InputDecoration(
         suffixIcon: Icon(widget.icon),
